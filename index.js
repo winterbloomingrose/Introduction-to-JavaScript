@@ -34,9 +34,9 @@ Do the following:
 
 let valOne = 500;
 let valTwo = 666;
-if (valTwo != 500) {
+if (valTwo = 600) {
   valOne = 666
-  return valOne
+  return console.log(valOne)
 }
 
 /*
@@ -67,7 +67,7 @@ function multiply(a, b){
   return a * b
 }
 
-/* testrun */ console.log (multiply(4, 8));
+/* testrun🌈*/ console.log (multiply(4, 8));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -83,7 +83,7 @@ function dogYears(humanYears){
   return humanYears * 7  
 }
 
-/* testrun */ console.log(dogYears(3))
+/* testrun🌈*/ console.log(dogYears(3))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -138,7 +138,7 @@ function hungryDog(weight, age){
   }
 }
 
-/* testrun */ console.log(hungryDog(15,1))
+/* testrun🌈 */ console.log(hungryDog(15,1))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -161,35 +161,43 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-const computer = Math.random();
+const computer = Math.random()
 
 function game(user, computer){
-  if (user == computer) {
-    return console.log("it's a tie");
+  if (user === "paper" && computer > .66) {
+    return console.log("computer chose paper! it's a tie");
+  }
+  else if (user === "rock" && computer <= .33 && computer <= .66) {
+    return console.log("computer chose rock! it's a tie");
+  }
+  else if (user === "scissors" && computer >= .33) {
+    return console.log("computer chose scissors! it's a tie");
   }
   /* you lose */
-  else if (user = "paper" && computer = "scissors") {
-    return console.log("you lose!");
+  else if (user === "paper" && computer >= .33) { /*comp scissor */
+    return console.log("computer chose scissors! you lose!");
   }
-  else if (user = "scissors" && computer = "rock") {
-    return console.log("you lose!");
+  else if (user === "scissors" && computer <= .33 && computer <= .66) { /* comp rock */
+    return console.log("computer chose rock! you lose!");
   }
-  else if (user = "rock" && computer = "paper") {
-    return console.log("you lose!");
+  else if (user === "rock" && computer > .66) { /* comp paper */
+    return console.log("computer chose paper! you lose!");
   }
   /* you win */
-  else if (computer = "paper" && user = "scissors") {
-    return console.log("you win!");
+  else if (user === "scissors" && computer > .66) { /* comp paper*/
+    return console.log("computer chose paper! you win!");
   }
-  else if (computer = "scissors" && user = "rock") {
-    return console.log("you win!");
+  else if (user === "rock" && computer >= .33) { /* comp scissors */
+    return console.log("computer chose scissors! you win!");
   }
-  else if (computer = "rock" && user = "paper") {
-    return console.log("you win!");
+  else if (user === "paper" &&  computer <= .33 && computer <= .66) { /*rock */
+    return console.log("computer chose rock! you win!");
   }
 }
 
-console.log(game("rock", computer)); /*test*/
+/*testrun🌈*/ game("paper", computer);
+/*testrun🌈*/ game("scissors", computer);
+/*testrun🌈*/ game("rock", computer); 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -206,7 +214,7 @@ function miles(kiloMeters){
   return kiloMeters * 0.621371
 }
 
-/* testrun */ console.log(miles(50))
+/* testrun🌈*/ console.log(miles(50))
 
 //Task 5b - Feet to CM
 /*
@@ -220,7 +228,7 @@ function feet(centiMeters){
   return centiMeters * 30.48
 }
  
-/*testrun*/ console.log (feet(30)) 
+/*testrun🌈*/ console.log (feet(30)) 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -232,10 +240,17 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(bottles){
+  if (bottles > 0) {
+    let oneLess = parseInt(bottles) - 1
+    return console.log(bottles + " bottles of soda on the wall, " + bottles + " bottles of soda, take one down, pass it around, " + oneLess + " bottles of soda on the wall! ")
   }
+  else if (bottles = 1) {
+    return console.log(bottles + " bottle of soda on the wall, " + bottles + " bottle of soda, take it down, pass it around, no more bottles of soda on the wall! ")
+  }
+}
 
+/*testrun🌈*/ annoyingSong(99);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -252,11 +267,25 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
-  }
-  
-  
+function grade(score){
+ if (score <= 100 && score >= 90){
+   return console.log("you got an A")
+ }
+ else if (score <= 80 && score >= 89){
+  return console.log("you got a B")
+ }
+ else if (score <=70 && score >= 79){
+  return console.log("you got a C")
+ }
+ else if (score <=60 && score >= 69){
+  return console.log("you got a D")
+ }
+ else if (score <=68){
+  return console.log("you got an F")
+ }
+}
+
+/*testrun🌈*/ grade(92);  /* i am confused if it is better practice to include the console.log inside of the function as i did here, or to exclude it and have it included when invoking the function. the first implies that the person is calling the function from inside the code while the second implies they are either manually putting console.log when invoking the function OR they are invoking the function from INSIDE the console so it automatically logs...functions that i am confused about this on i have marked with a rainbow emoji in their testruns */
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
