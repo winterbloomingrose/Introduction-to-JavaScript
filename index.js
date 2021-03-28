@@ -112,11 +112,33 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age){
+  /* adult dog */
+  if (weight <= 5 && age>=1){
+    return weight * .05
+  } 
+  else if (weight >= 6 && weight <= 10 && age>=1){
+    return weight * .04
   }
+  else if (weight >= 11 && weight <= 15 && age>=1){
+    return weight * .03
+  }
+  else if (weight > 15){
+    return weight * .02
+  }
+  /* puppy */
+  else if (age >= .17 && age <= .33){
+    return weight * .10
+  } 
+   else if (age >= .34 && age <= .58){
+    return weight * .05
+  }
+  else if (age >= .59 && age < 1){
+    return weight * .04
+  }
+}
 
-
+/* testrun */ console.log(hungryDog(15,1))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -139,11 +161,35 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
+const computer = Math.random();
+
 function game(user, computer){
-    /*add your code here*/
+  if (user == computer) {
+    return console.log("it's a tie");
+  }
+  /* you lose */
+  else if (user = "paper" && computer = "scissors") {
+    return console.log("you lose!");
+  }
+  else if (user = "scissors" && computer = "rock") {
+    return console.log("you lose!");
+  }
+  else if (user = "rock" && computer = "paper") {
+    return console.log("you lose!");
+  }
+  /* you win */
+  else if (computer = "paper" && user = "scissors") {
+    return console.log("you win!");
+  }
+  else if (computer = "scissors" && user = "rock") {
+    return console.log("you win!");
+  }
+  else if (computer = "rock" && user = "paper") {
+    return console.log("you win!");
+  }
 }
-  
-  
+
+console.log(game("rock", computer)); /*test*/
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -156,11 +202,11 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
+function miles(kiloMeters){
+  return kiloMeters * 0.621371
+}
 
-
+/* testrun */ console.log(miles(50))
 
 //Task 5b - Feet to CM
 /*
@@ -170,11 +216,11 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
+function feet(centiMeters){
+  return centiMeters * 30.48
+}
  
-
+/*testrun*/ console.log (feet(30)) 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
