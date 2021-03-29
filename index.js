@@ -32,12 +32,14 @@ Do the following:
    HINT: no function required
 */
 
-let valOne = 500;
-let valTwo = 666;
-if (valTwo = 600) {
-  valOne = 666
-  return console.log(valOne)
-}
+let personSleepy = "This person is sleepy."
+let coffeeConsumed = "This person drank coffee!"
+
+if (coffeeConsumed == "This person drank coffee!") {
+  personSleepy = "This person is wide awake!"
+  console.log(personSleepy)
+} 
+
 
 /*
 Task 1c - Convert Strings to Numbers
@@ -241,16 +243,19 @@ Using the annoyingSong function below do the following:
 */
 
 function annoyingSong(bottles){
-  if (bottles > 0) {
-    let oneLess = parseInt(bottles) - 1
-    return console.log(bottles + " bottles of soda on the wall, " + bottles + " bottles of soda, take one down, pass it around, " + oneLess + " bottles of soda on the wall! ")
+  for (let bottles = 99; bottles > 2; bottles--) {
+    console.log(bottles + " bottles of soda on the wall, " + bottles + " bottles of soda, take one down, pass it around, " + (bottles-1) + " bottles of soda on the wall! ")
   }
-  else if (bottles = 1) {
-    return console.log(bottles + " bottle of soda on the wall, " + bottles + " bottle of soda, take it down, pass it around, no more bottles of soda on the wall! ")
+  for(let bottles=2; bottles > 1; bottles--) {
+   console.log(bottles + " bottles of soda on the wall, " + bottles + " bottles of soda, take one down, pass it around, " + (bottles-1) + " bottle of soda on the wall! ")
+  }
+  for(let bottles=1; bottles>0; bottles--) {
+   console.log(bottles + " bottle of soda on the wall, " + bottles + " bottle of soda, take it down, pass it around, no more bottles of soda on the wall! ")
   }
 }
 
-/*testrun🌈*/ annoyingSong(99);
+/*testrun*/ annoyingSong(99);
+/*shorttestrun*/ annoyingSong(4);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
