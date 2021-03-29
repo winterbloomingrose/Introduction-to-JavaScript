@@ -305,11 +305,17 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
-}
+function vowelCounter(yourString) {
+  const vowelsList = /[AEIOUaeiou]/g;
+  const numberVowels = yourString.match(vowelsList);
+  return numberVowels 
+}  
 
+/*test*/ console.log(vowelCounter("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG!"))
+/*test*/ console.log(vowelCounter("The Quick Brown Fox Jumps Over The Lazy Dog!"))
+/*test*/ console.log(vowelCounter("the quick brown fox jumps over the lazy dog!"))
 
+/* I used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match  as a reference. I still do not understand this 100% especially the "g" but it is interesting and a good starting point :-) */
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo(){
